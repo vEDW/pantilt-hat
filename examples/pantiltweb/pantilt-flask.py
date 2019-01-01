@@ -19,7 +19,7 @@ pantilthat.light_type(pantilthat.GRBW)
 direction = 0
 angle = 0
 maxdirection = 80
-maxangle = 75
+maxangle = 72
 
 pantilthat.pan(direction)
 pantilthat.tilt(angle)
