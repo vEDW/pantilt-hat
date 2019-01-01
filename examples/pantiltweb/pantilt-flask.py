@@ -5,7 +5,6 @@
 # -----------------------
 
 import pantilthat
-import time
 
 try:
     from flask import Flask, render_template, request
@@ -13,8 +12,6 @@ except ImportError:
     exit("This script requires the flask module\nInstall with: sudo pip install flask")
 
 from flask import Flask, render_template, request
-
-lastmove = ""
 
 pantilthat.light_mode(pantilthat.WS2812)
 pantilthat.light_type(pantilthat.GRBW)
