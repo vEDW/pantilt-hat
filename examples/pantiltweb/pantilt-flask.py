@@ -32,16 +32,6 @@ def lightOff():
     neoPixelLight(0,0,0) 
     return
 
-@app.route('/lighton')
-def lightonRoute():
-    lightOn()
-    return "Switch Lights On"
-
-@app.route('/lightoff')
-def lightoffRoute():
-    lightOff()
-    return "Switch Lights Off"
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -56,10 +46,15 @@ def update_robot(state=None):
     }
     return render_template('main.html', **template_data)
 
+@app.route('/lighton')
+def lightonRoute():
+    lightOn()
+    return "Switch Lights On"
 
-@app.route('/')
-def home():
-    return render_template('gui.html')
+@app.route('/lightoff')
+def lightoffRoute():
+    lightOff()
+    return "Switch Lights Off"
 
 @app.route('/api/<direction>/<int:angle>')
 def api(direction, angle):
