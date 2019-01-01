@@ -35,7 +35,7 @@ def lightOff():
     neoPixelLight(0,0,0)
     return
 
-def left():
+def going_Left():
     global direction
     direction = direction - 1
     if direction < 2 or direction > 178:
@@ -44,7 +44,7 @@ def left():
         pantilthat.pan(direction)
     return
 
-def right():
+def going_Right():
     global direction
     direction = direction + 1
     if direction < 2 or direction > 178:
@@ -52,7 +52,7 @@ def right():
     else:
         pantilthat.pan(direction)
     return
-    
+
 app = Flask(__name__)
 
 @app.route("/")
