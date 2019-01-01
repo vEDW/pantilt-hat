@@ -19,19 +19,40 @@ lastmove = ""
 pantilthat.light_mode(pantilthat.WS2812)
 pantilthat.light_type(pantilthat.GRBW)
 
+direction = 90
+angle = 90
+
 def neoPixelLight(red, green, blue):
     pantilthat.set_all(red, green, blue)
     pantilthat.show()
     return
 
 def lightOn():
-    neoPixelLight(255,255,255) 
+    neoPixelLight(255,255,255)
     return
 
 def lightOff():
-    neoPixelLight(0,0,0) 
+    neoPixelLight(0,0,0)
     return
 
+def left():
+    global direction
+    direction = direction - 1
+    if direction < 2 or direction > 178:
+        return
+    else:
+        pantilthat.pan(direction)
+    return
+
+def right():
+    global direction
+    direction = direction + 1
+    if direction < 2 or direction > 178:
+        return
+    else:
+        pantilthat.pan(direction)
+    return
+    
 app = Flask(__name__)
 
 @app.route("/")
@@ -41,6 +62,10 @@ def update_robot(state=None):
         going_Left()
     if state == 'right':
 	    going_Right()
+    if state == 'upward':
+        going_Up()
+    if state == 'downward':
+	    going_Down()
     template_data = {
         'title' : state,
     }
