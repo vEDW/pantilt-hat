@@ -46,7 +46,7 @@ def going_Left():
 def going_Right():
     global direction
     print "direction : " + str(direction)
-    if direction > 70:    
+    if direction > -70:    
         direction = direction - 1
         pantilthat.pan(direction)
     return
