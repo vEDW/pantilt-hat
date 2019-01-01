@@ -18,6 +18,8 @@ pantilthat.light_type(pantilthat.GRBW)
 
 direction = 0
 angle = 0
+maxdirection = 80
+maxangle = 75
 
 pantilthat.pan(direction)
 pantilthat.tilt(angle)
@@ -38,7 +40,7 @@ def lightOff():
 def going_Left():
     global direction
     print "direction : " + str(direction)
-    if direction < 70:
+    if direction < maxdirection:
         direction = direction + 1
         pantilthat.pan(direction)
     return
@@ -46,7 +48,7 @@ def going_Left():
 def going_Right():
     global direction
     print "direction : " + str(direction)
-    if direction > -70:    
+    if direction > -maxdirection:    
         direction = direction - 1
         pantilthat.pan(direction)
     return
@@ -54,7 +56,7 @@ def going_Right():
 def going_Up():
     global angle
     print "angle : " + str(angle)
-    if angle > -88:
+    if angle > -maxangle:
         angle = angle - 1
         pantilthat.tilt(angle)
     return
@@ -62,7 +64,7 @@ def going_Up():
 def going_Down():
     global angle
     print "angle : " + str(angle)
-    if angle < 88:
+    if angle < maxangle:
         angle = angle + 1
         pantilthat.tilt(angle)
     return
