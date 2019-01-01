@@ -37,21 +37,17 @@ def lightOff():
 
 def going_Left():
     global direction
-    direction = direction - 1
+    direction = direction + 1
     print "direction : " + str(direction)
-    if direction < -88 or direction > 88:
-        return
-    else:
+    if direction < 70:
         pantilthat.pan(direction)
     return
 
 def going_Right():
     global direction
-    direction = direction + 1
+    direction = direction - 1
     print "direction : " + str(direction)
-    if direction < -88 or direction > 88:    
-        return
-    else:
+    if direction > 70:    
         pantilthat.pan(direction)
     return
 
