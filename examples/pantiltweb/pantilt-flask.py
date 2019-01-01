@@ -19,6 +19,9 @@ pantilthat.light_type(pantilthat.GRBW)
 direction = 0
 angle = 0
 
+pantilthat.pan(direction)
+pantilthat.tilt(angle)
+
 def neoPixelLight(red, green, blue):
     pantilthat.set_all(red, green, blue)
     pantilthat.show()
@@ -35,6 +38,7 @@ def lightOff():
 def going_Left():
     global direction
     direction = direction - 1
+    print "direction : " + direction
     if direction < -88 or direction > 88:
         return
     else:
@@ -44,7 +48,8 @@ def going_Left():
 def going_Right():
     global direction
     direction = direction + 1
-    if direction < -88 or direction > 88:
+    print "direction : " + direction
+    if direction < -88 or direction > 88:    
         return
     else:
         pantilthat.pan(direction)
@@ -53,6 +58,7 @@ def going_Right():
 def going_Up():
     global angle
     angle = angle - 1
+    print "angle : " + angle
     if angle < -88 or angle > 88:
         return
     else:
@@ -62,6 +68,7 @@ def going_Up():
 def going_Down():
     global angle
     angle = angle + 1
+    print "angle : " + angle
     if angle < -88 or angle > 88:
         return
     else:
