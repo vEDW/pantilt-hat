@@ -19,8 +19,8 @@ lastmove = ""
 pantilthat.light_mode(pantilthat.WS2812)
 pantilthat.light_type(pantilthat.GRBW)
 
-direction = 90
-angle = 90
+direction = 0
+angle = 0
 
 def neoPixelLight(red, green, blue):
     pantilthat.set_all(red, green, blue)
@@ -38,7 +38,7 @@ def lightOff():
 def going_Left():
     global direction
     direction = direction - 1
-    if direction < 2 or direction > 178:
+    if direction < -88 or direction > 88:
         return
     else:
         pantilthat.pan(direction)
@@ -47,7 +47,7 @@ def going_Left():
 def going_Right():
     global direction
     direction = direction + 1
-    if direction < 2 or direction > 178:
+    if direction < -88 or direction > 88:
         return
     else:
         pantilthat.pan(direction)
