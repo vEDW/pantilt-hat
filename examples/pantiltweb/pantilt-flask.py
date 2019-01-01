@@ -19,7 +19,7 @@ pantilthat.light_type(pantilthat.GRBW)
 direction = 0
 angle = 0
 maxdirection = 80
-maxangle = 72
+maxangle = 70
 
 pantilthat.pan(direction)
 pantilthat.tilt(angle)
@@ -39,7 +39,7 @@ def lightOff():
 
 def going_Left():
     global direction
-    print "direction : " + str(direction)
+    #print "direction : " + str(direction)
     if direction < maxdirection:
         direction = direction + 1
         pantilthat.pan(direction)
@@ -47,7 +47,7 @@ def going_Left():
 
 def going_Right():
     global direction
-    print "direction : " + str(direction)
+    #print "direction : " + str(direction)
     if direction > -maxdirection:    
         direction = direction - 1
         pantilthat.pan(direction)
@@ -55,7 +55,7 @@ def going_Right():
 
 def going_Up():
     global angle
-    print "angle : " + str(angle)
+    #print "angle : " + str(angle)
     if angle > -maxangle:
         angle = angle - 1
         pantilthat.tilt(angle)
@@ -63,7 +63,7 @@ def going_Up():
 
 def going_Down():
     global angle
-    print "angle : " + str(angle)
+    #print "angle : " + str(angle)
     if angle < maxangle:
         angle = angle + 1
         pantilthat.tilt(angle)
@@ -92,4 +92,4 @@ def update_pantilt(state=None):
     return render_template('main.html', **template_data)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=9595, debug=True)
+    app.run(host='0.0.0.0', port=9595, debug=False)
