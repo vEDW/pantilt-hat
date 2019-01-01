@@ -37,37 +37,33 @@ def lightOff():
 
 def going_Left():
     global direction
-    direction = direction + 1
     print "direction : " + str(direction)
     if direction < 70:
+        direction = direction + 1
         pantilthat.pan(direction)
     return
 
 def going_Right():
     global direction
-    direction = direction - 1
     print "direction : " + str(direction)
     if direction > 70:    
+        direction = direction - 1
         pantilthat.pan(direction)
     return
 
 def going_Up():
     global angle
-    angle = angle - 1
     print "angle : " + str(angle)
-    if angle < -88 or angle > 88:
-        return
-    else:
+    if angle > -88:
+        angle = angle - 1
         pantilthat.tilt(angle)
     return
 
 def going_Down():
     global angle
-    angle = angle + 1
     print "angle : " + str(angle)
-    if angle < -88 or angle > 88:
-        return
-    else:
+    if angle < 88:
+        angle = angle + 1
         pantilthat.tilt(angle)
     return
 
