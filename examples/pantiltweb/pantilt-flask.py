@@ -89,7 +89,7 @@ def update_pantilt(state=None):
     template_data = {
         'title' : state,
     }
-    return render_template('main.html', **template_data)
+    return render_template('main.html', angleValue=angle, directionValue=direction)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=9595, debug=False)
