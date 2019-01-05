@@ -119,8 +119,13 @@ def set_light(redint,greenint,blueint):
     state = None
     global red
     global green
-    global blue 
+    global blue
+    redint = int(redint)
+    greenint = int(greenint)
+    blueint = int(blueint)
+    
     if redint >= 0 and redint <=255:
+        print "set redint : " + str(redint)
         red = redint
     if greenint >= 0 and greenint <=255:
         green = greenint
