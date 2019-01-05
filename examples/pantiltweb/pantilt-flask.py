@@ -116,6 +116,7 @@ def update_pantilt(state=None):
 
 @app.route("/light/<redint>/<greenint>/<blueint>")
 def set_light(redint,greenint,blueint):
+    state = None
     global red
     global green
     global blue 
