@@ -106,8 +106,36 @@ def update_pantilt(state=None):
 	    lightOff()
     template_data = {
         'title' : state,
+        'angleValue' : angle,
+        'directionValue' : direction,
+         'redValue' : red,
+        'greenValue' : green,
+        'blueValue' : blue,
     }
-    return render_template('main.html', angleValue=angle, directionValue=direction)
+    return render_template('main.html', **template_data)
+
+@app.route("/light/<redint>/<greenint>/<blueint>")
+def set_light():
+    global red
+    global green
+    global blue 
+    if redint >= 0 and redint <=255:
+        red = redint
+    if greenint >= 0 and greenint <=255:
+        green = greenint
+    if blueint >= 0 and blueint <=255:
+        blue = blueint
+    neoPixelLight()
+
+    template_data = {
+        'title' : state,
+        'angleValue' : angle,
+        'directionValue' : direction,
+        'redValue' : red,
+        'greenValue' : green,
+        'blueValue' : blue,
+    }
+    return render_template('main.html', **template_data)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=9595, debug=False)
+    app.run(host='0.0.0.0', port=9595, debug=True)
