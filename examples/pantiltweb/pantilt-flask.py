@@ -16,7 +16,7 @@ from flask import Flask, render_template, request
 pantilthat.light_mode(pantilthat.WS2812)
 pantilthat.light_type(pantilthat.GRBW)
 
-direction = 0
+direction = 48
 angle = 0
 maxdirection = 80
 maxangle = 70
