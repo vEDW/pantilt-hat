@@ -20,21 +20,39 @@ direction = 48
 angle = 0
 maxdirection = 80
 maxangle = 70
+red = 0
+green = 0 
+blue = 0
 
 pantilthat.pan(direction)
 pantilthat.tilt(angle)
 
-def neoPixelLight(red, green, blue):
+def neoPixelLight():
+    global red
+    global green
+    global blue 
     pantilthat.set_all(red, green, blue)
     pantilthat.show()
     return
 
 def lightOn():
-    neoPixelLight(255,255,255)
+    global red
+    global green
+    global blue 
+    red = 255
+    green = 255
+    blue = 255
+    neoPixelLight()
     return
 
 def lightOff():
-    neoPixelLight(0,0,0)
+    global red
+    global green
+    global blue 
+    red = 0
+    green = 0
+    blue = 0
+    neoPixelLight()
     return
 
 def going_Left():
