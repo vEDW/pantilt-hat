@@ -115,7 +115,7 @@ def update_pantilt(state=None):
     return render_template('main.html', **template_data)
 
 @app.route("/light/<redint>/<greenint>/<blueint>")
-def set_light():
+def set_light(redint,greenint,blueint):
     global red
     global green
     global blue 
