@@ -45,6 +45,16 @@ def lightOn():
     neoPixelLight()
     return
 
+def lightOnMedium():
+    global red
+    global green
+    global blue 
+    red = 90
+    green = 90
+    blue = 90
+    neoPixelLight()
+    return
+
 def lightOff():
     global red
     global green
@@ -102,6 +112,8 @@ def update_pantilt(state=None):
 	    going_Down()
     if state == 'lighton':
         lightOn()
+    if state == 'lightonmedium':
+        lightOnMedium()
     if state == 'lightoff':
 	    lightOff()
     template_data = {
